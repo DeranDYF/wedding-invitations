@@ -1,0 +1,143 @@
+/* ========================================
+   FONT ARABIC
+   ======================================== */
+
+.font-arabic {
+    font-family: 'Amiri', serif;
+}
+
+
+/* ========================================
+   IOS GLASS STYLING
+   ======================================== */
+
+.ios-glass {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+}
+
+.ios-glass-dark {
+    background: rgba(20, 22, 28, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.ios-glass-button {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ios-glass-button:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+.ios-glass-button:active {
+    transform: scale(0.97);
+}
+
+
+/* ========================================
+   CUSTOM SCROLLBAR
+   ======================================== */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0B0F17;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #374151;
+    border-radius: 3px;
+}
+
+
+/* ========================================
+   SCROLL REVEAL
+   Default terlihat jika JavaScript gagal.
+   Animasi aktif setelah JS berjalan.
+   ======================================== */
+
+.scroll-reveal {
+    opacity: 1;
+    transform: none;
+}
+
+/* Aktif hanya setelah JavaScript berhasil dimuat */
+.js-enabled .scroll-reveal {
+    opacity: 0;
+    transform: translate3d(0, 32px, 0);
+    transition:
+        opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s,
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+    will-change: opacity, transform;
+}
+
+.js-enabled .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+
+/* Animasi dari kiri */
+
+.js-enabled .scroll-reveal.scroll-reveal-left {
+    transform: translate3d(-32px, 0, 0);
+}
+
+.js-enabled .scroll-reveal.scroll-reveal-left.is-visible {
+    transform: translate3d(0, 0, 0);
+}
+
+
+/* Animasi dari kanan */
+
+.js-enabled .scroll-reveal.scroll-reveal-right {
+    transform: translate3d(32px, 0, 0);
+}
+
+.js-enabled .scroll-reveal.scroll-reveal-right.is-visible {
+    transform: translate3d(0, 0, 0);
+}
+
+
+/* Animasi zoom */
+
+.js-enabled .scroll-reveal.scroll-reveal-zoom {
+    transform: scale(0.94);
+}
+
+.js-enabled .scroll-reveal.scroll-reveal-zoom.is-visible {
+    transform: scale(1);
+}
+
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .js-enabled .scroll-reveal,
+    .js-enabled .scroll-reveal.scroll-reveal-left,
+    .js-enabled .scroll-reveal.scroll-reveal-right,
+    .js-enabled .scroll-reveal.scroll-reveal-zoom {
+        opacity: 1;
+        transform: none;
+        transition: none;
+        will-change: auto;
+    }
+}
